@@ -2,67 +2,42 @@
 {% block content %}
 
 <div class="home">
-    <h2>Weather Information</h2>
+    <h2>Cluster</h2>
     <hr></hr>
-    <form method="post">
-    <input type="text" value="Braunschweig" name="location"/>
-    <button type="submit"> Update </button>
+	<form method="POST">
+        <div class="grid-container">
+			<button type="submit" name="button" value="C 0 0">C 0 0</button>
+			<button type="submit" name="button" value="C 0 1">C 0 1</button>
+			<button type="submit" name="button" value="C 0 2">C 0 2</button>
+			<button type="submit" name="button" value="C 1 0">C 1 0</button>
+			<button type="submit" name="button" value="C 1 1">C 1 1</button>
+			<button type="submit" name="button" value="C 1 2">C 1 2</button>
+			<button type="submit" name="button" value="C 2 0">C 2 0</button>
+			<button type="submit" name="button" value="C 2 1">C 2 1</button>
+			<button type="submit" name="button" value="C 2 2">C 2 2</button>
+        </div>
     </form>
 	<div class="row">
 		<div class="col">
-			<div class="weather-card one">
+			<div class="card one">
 				<div class="top">
 					<div class="wrapper">
-						<h1 class="heading"></h1>
-						<h3 class="location">{{data["locationname"]}}</h3>
+                        <p>Power Grid Informations</p>
+						<!-- <h3 class="location">{{data["locationname"]}}</h3>
 						<li class="li-without-bullets">
-							<span>Lng:</span>
-							<span>{{data["longitude"]}}°</span>
-							<span>|</span>
-							<span>Lat:</span>
-							<span>{{data["latitude"]}}°</span>
+							<span>power:</span>
+							<span>{{data["power"]}} W</span> -->
 						</li>								
-						<span class="temp">{{data["location_time"]}}</span>					
-						<p class="temp">
-							<span class="temp-value">{{data["temperatur"]}}°C</span>
-							
-						</p>
-						<li class="li-without-bullets">
-							<span>{{data["weather_description"]}}</span>
-						</li>
-						<li class="li-without-bullets">
-							<span>{{data["cloudiness"]}}% cloudiness</span>
-						</li>
 					</div>
 				</div>
 				<div class="middle">
 					<div class="wrapper">
-						<p class="wind_speed">
-							<span class="wind_speed-value">{{data["wind_speed"]}} km/h</span>
-						</p>
-						<li class="li-without-bullets">
-							<span>{{data["wind_direction"]}}</span>
-						</li>
+                        <p>Bitcoin Mining Informations</p>
 					</div>
 				</div>
 				<div class="bottom">
 					<div class="wrapper">
-						<span>Azimuth:</span> 
-						<p class="sun_position">
-							<span class="sun_position-value">{{data["azimuth"]}}°</span>
-						</p>
-						<span>Elevation:</span>
-						<p class="sun_position">						
-
-							<span class="sun_position-value">{{data["elevation"]}}°</span>
-						</p>
-						<li class="li-without-bullets">
-							<span>Sunrise:</span>
-							<span> {{data["sunrise"]}} </span>
-							<span>|</span>
-							<span>Sunset:</span>
-							<span> {{data["sunset"]}}</span>
-						</li>
+                        <p>Container Status Informations</p>
 					</div>
 				</div>
 			</div>
@@ -70,4 +45,3 @@
 	</div>
 </div>
 {% endblock %}
-

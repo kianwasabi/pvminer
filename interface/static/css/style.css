@@ -1,6 +1,6 @@
 /*HEADER*/
 header {
-  background-color: #fec308;
+  background-color: #5ca368;
   height: 40px;
   width: auto;
   opacity: .9;
@@ -44,8 +44,10 @@ h1 {
   text-align: center;
   color: #111010;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
+  font-weight: 100;
+  margin-top: 30px;
 }
+
 /*BODY*/
 body {
   margin: 0;
@@ -66,33 +68,17 @@ div.home {
           border-radius: 6px;
   text-align: center;
 }
-div.api {
-  padding: 10px 10px 30px 10px;
-  background-color: #ffffff;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-  text-align: center;
-}
-div.processcontrol {
-  padding: 10px 10px 30px 10px;
-  background-color: #ffffff;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-  text-align: center;
-}
-div.about {
-  padding: 10px 10px 30px 10px;
-  background-color: #ffffff;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-
 /*CONTENT(INPUT,TABLE,BUTTON,...)*/
 h2 {
   font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111010;
+}
+p {
+  font-size: 1em;
   font-weight: 100;
   margin-top: 30px;
   text-align: center;
@@ -111,32 +97,14 @@ input{
   margin-top: 10px;
   text-align: center;
 }
-/*
-table, td
-{
-  border: 0.5px solid #111010;
-  border-collapse: collapse;
-  font: #111010;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 2px;
-  text-align: left;
-  margin-top: 20px;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
 }
-th
-{
-  border: 0.5px solid #111010;
-  border-collapse: collapse;
-  font: #111010;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-table.center {
-  margin: auto;
-}*/
-
-/*Weather-card*/
-.weather-card {
+/*card*/
+.card {
   margin: 20px auto;
   height: auto;
   width: 450px;
@@ -145,48 +113,45 @@ table.center {
   border-radius: 10px;
   overflow: hidden;
 }
-.weather-card .top {
+.card .top {
   position: relative;
   height: auto;
   width: 100%;
   overflow: hidden;
-  background-color:rgb(182, 179, 175);
-  /*background-image: url('./images/00_Background_Top.jpg');*/
+  background-color:#5C73A3;
   background-size: cover;
   background-position: center center;
   text-align: center;
   color:#000
 }
-.weather-card .top .wrapper {
+.card .top .wrapper {
   padding: 5px;
   position: relative;
   z-index: 1;
 }
-.weather-card .top .wrapper .heading {
+.card .top .wrapper .heading {
   margin-top: 20px;
   font-size: 35px;
   font-weight: 400;
   color: #fff;
 }
-.weather-card .top .wrapper .location {
+.card .top .wrapper .location {
   margin-top: 20px;
   font-size: 21px;
   font-weight: 400;
   color: #fff;
 }
-.weather-card .top .wrapper .temp {
+.card .top .wrapper .power {
   margin: 10px;
 }
-.weather-card .top .wrapper .temp .temp-value {
+.card .top .wrapper .temp .power-value {
   display: inline-block;
   font-size: 50px;
   font-weight: 600;
   color: #fff;
 }
-.weather-card .top .wrapper .li-without-bullets {
-  list-style-type: none;
-}
-.weather-card .top:after {
+
+.card .top:after {
   content: "";
   height: 100%;
   width: 100%;
@@ -196,78 +161,46 @@ table.center {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-.weather-card .middle {
+.card .middle {
   padding: 0 30px;
   position: relative;
   height: auto;
   width: 100%;
   overflow: hidden;
-  background-color:rgb(122, 203, 221);
-  /*background-image: url('./images/01_WindMile_Middle.jpg');*/
-  background-image: url('./images/Counter_rotating_wind_turbine_animation.gif');
-  /*background-blend-mode: difference;*/
+  background-color:#A35C97;
   background-size: cover;
   background-position: center center;
   text-align: center;
   color:#000
 }
 
-.weather-card .middle .wrapper {
+.card .middle .wrapper {
   padding: 5px;
   position: relative;
   z-index: 1;
 }
 
-.weather-card .middle .wrapper .wind_speed {
-  margin: 5px;
-}
-.weather-card .middle .wrapper .wind_speed .wind_speed-value {
-  display: inline-block;
-  font-size: 50px;
-  font-weight: 600;
-  color: black;
-}
-.weather-card .middle .wrapper .li-without-bullets {
+.card .middle .wrapper .li-without-bullets {
   list-style-type: none;
 }
-.weather-card .bottom {
+.card .bottom {
   padding: 0 30px;
   position: relative;
   height: auto;
   width: 100%;
   overflow: hidden;
-  background-color:#f2eb66;
-  /*background: url('./images/02_Photovoltaik_Positioning_Botton.jpg');*/
-  background: url('./images/200w.gif');
+  background-color:#A38C5C;
   background-blend-mode:lighten;
   background-size: cover;
   background-position: center center;
   text-align: center;
   color:#000
 }
-.weather-card .bottom .wrapper {
+.card .bottom .wrapper {
   padding: 5px;
   position: relative;
   z-index: 1;
 }
-/*
-.weather-card .bottom .wrapper .sun {
-  overflow: hidden;
-  margin: 0;
-  font-size: 0;
-  padding: 0;
-  padding-top: 20px;
-  max-height: 300px;
-}*/
-.weather-card .bottom .wrapper .sun_position{
-  margin: 5px;
-}
-.weather-card .bottom .wrapper .sun_position .sun_position-value {
-  display: inline-block;
-  font-size: 50px;
-  font-weight: 600;
-  color: black;
-}
-.weather-card .bottom .wrapper .li-without-bullets {
+.card .bottom .wrapper .li-without-bullets {
   list-style-type: none;
 }
