@@ -1,7 +1,7 @@
 from flask import request, render_template
 from database.models import *
 from config import *
-from .server import *
+from ..server import *
 
 @app.route('/', methods=["POST","GET"])
 def home():

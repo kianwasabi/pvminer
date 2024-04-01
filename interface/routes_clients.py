@@ -1,7 +1,7 @@
 from flask import make_response , request, jsonify
 from database.models import *
 from config import *
-from .server import *
+from ..server import *
 
 def message_in_Terminal(message):
     print("╔════════════════════════════════════════════════════════════════╗")
