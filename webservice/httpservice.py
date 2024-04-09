@@ -13,12 +13,12 @@ class PowerSource:
     
 class IntradayTrading:
     def __init__(self):
-        self.price = 0      #EUR/MWh
+        self.price_renewable_energy = 0      #EUR/MWh
     def get_price(self):
         #response = requests.get("https://intradaytrading.org/get/price")
         #payload = response.json()
         #print(payload)
-        self.price = random.randint(50,80)
+        self.price_renewable_energy = random.randint(50,80)
         return self.price
 
 class Mining:
